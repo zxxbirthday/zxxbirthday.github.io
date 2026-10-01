@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邹晓昕 · 18岁生日快乐</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  color:#40566b;
+  background:#f3f9ff;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 10% 10%,#cfe8ff,transparent 28%),
+    radial-gradient(circle at 90% 20%,#dbe9ff,transparent 27%),
+    linear-gradient(135deg,#f8fcff,#eef6ff);
+}
+
+section{
+  padding:70px 18px;
+}
+
+.wrap{
+  max-width:900px;
+  margin:auto;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.card,.box{
+  padding:55px 25px;
+  border-radius:32px;
+  background:#ffffffc4;
+  backdrop-filter:blur(15px);
+  box-shadow:0 25px 70px #467da526;
+}
+
+.small{
+  letter-spacing:5px;
+  color:#6f91ad;
+  font-size:13px;
+}
+
+.hero h1{
+  font-size:clamp(38px,8vw,76px);
+  color:#405b73;
+}
+
+.hero h1 span{
+  color:#5796c8;
+}
+
+.age{
+  font-size:clamp(90px,19vw,175px);
+  font-weight:900;
+  line-height:.9;
+  color:transparent;
+  -webkit-text-stroke:2px #6aa7d6;
+}
+
+.subtitle{
+  font-size:18px;
+  line-height:1.9;
+  color:#668195;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:999px;
+  background:#5d9dce;
+  color:white;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 10px 25px #5d9dce44;
+}
+
+.title{
+  text-align:center;
+  font-size:30px;
+  color:#405a70;
+}
+
+.desc{
+  text-align:center;
+  color:#7b95a8;
+  margin-bottom:35px;
+}
+
+.message{
+  background:#ffffffc7;
+  border-radius:28px;
+  padding:35px;
+  line-height:2;
+  box-shadow:0 15px 50px #467da51a;
+}
+
+.message p{
+  margin:0 0 15px;
+}
+
+.quote{
+  padding:20px;
+  border-left:4px solid #8db9da;
+  background:#eef7ff;
+  border-radius:0 16px 16px 0;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.memory{
+  min-height:175px;
+  padding:25px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#fff,#e5f2ff);
+  display:flex;
+  align-items:flex-end;
+  box-shadow:0 12px 30px #467da517;
+}
+
+.memory:nth-child(2){
+  background:linear-gradient(145deg,#fff,#e7f0ff);
+}
+
+.memory:nth-child(3){
+  background:linear-gradient(145deg,#fff,#eaf7ff);
+}
+
+.memory small{
+  font-weight:normal;
+  color:#7890a2;
+}
+
+.timeline{
+  max-width:700px;
+  margin:auto;
+  position:relative;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#b6d4ea;
+}
+
+.event{
+  position:relative;
+  padding:0 0 28px 55px;
+}
+
+.dot{
+  position:absolute;
+  left:9px;
+  top:3px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#5d9dce;
+  border:5px solid white;
+  box-shadow:0 0 0 2px #b6d4ea;
+}
+
+.event p{
+  color:#7890a2;
+  line-height:1.8;
+}
+
+.final{
+  text-align:center;
+  padding-bottom:90px;
+}
+
+.big{
+  font-size:42px;
+  font-weight:800;
+  color:#4e91c3;
+  margin:14px 0;
+}
+
+.final p{
+  line-height:1.9;
+  color:#71899a;
+}
+
+.letter{
+  display:none;
+  margin:30px auto 0;
+  max-width:720px;
+  text-align:left;
+  background:white;
+  border:1px solid #c9e1f2;
+  border-radius:18px;
+  padding:38px 34px;
+  box-shadow:0 18px 45px #467da526;
+  animation:open .7s ease;
+}
+
+.letter h3{
+  text-align:center;
+  color:#4f88b1;
+  font-size:25px;
+  margin:0 0 25px;
+}
+
+.letter p{
+  line-height:2;
+  margin:0 0 15px;
+  color:#60798d;
+}
+
+.signature{
+  text-align:right!important;
+  color:#4f88b1!important;
+  margin-top:25px!important;
+}
+
+@keyframes open{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#7c9aae;
+  font-size:13px;
+}
+
+.confetti{
+  position:fixed;
+  top:-15px;
+  width:9px;
+  height:14px;
+  z-index:30;
+  animation:fall 3.5s linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:.9;
+  }
+}
+
+@media(max-width:650px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card,.message{
+    padding:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="card">
+
+<div class="small">A SPECIAL DAY · 2027</div>
+
+<h1>
+邹晓昕，
+<span>十八岁生日快乐！</span>
+</h1>
+
+<div class="age">18</div>
+
+<div class="subtitle">
+十八岁，是一个新的章节。<br>
+愿你带着热爱出发，去遇见更多闪闪发光的日子。
+</div>
+
+<a class="btn" href="#wish">
+打开生日祝福 ↓
+</a>
+
+</div>
+</section>
+
+
+<section id="wish">
+<div class="wrap">
+
+<h2 class="title">
+写给十八岁的你 ✉️
+</h2>
+
+<p class="desc">
+愿所有美好的事情，都在未来慢慢发生
+</p>
+
+<div class="message">
+
+<p>亲爱的邹晓昕：</p>
+
+<p>
+今天，你正式迎来了人生中很特别的一个年龄——
+<strong>18岁</strong>。
+</p>
+
+<p>
+愿你的十八岁，不只有“长大”这一个关键词，
+也有勇气、自由、快乐和很多值得珍藏的回忆。
+希望你可以一直做自己喜欢的事，
+去见想见的人，去看想看的风景。
+</p>
+
+<p>
+未来可能会有晴天，也可能会遇到小雨，
+但请相信，每一步都算数。
+希望很多年以后回头看，
+你会觉得十八岁的自己，真的很闪耀。
+</p>
+
+<div class="quote">
+愿你眼里有光，心中有梦，脚下有路；
+愿你所遇皆温柔，所行皆坦荡。
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<h2 class="title">
+十八岁的关键词
+</h2>
+
+<p class="desc">
+把想要的生活，一点一点写进未来
+</p>
+
+<div class="cards">
+
+<div class="memory">
+<b>
+❄️ 保持热爱<br>
+<small>认真生活，也认真快乐。</small>
+</b>
+</div>
+
+<div class="memory">
+<b>
+🫧 勇敢追梦<br>
+<small>去成为自己想成为的人。</small>
+</b>
+</div>
+
+<div class="memory">
+<b>
+✨ 好好长大<br>
+<small>温柔坚定，自在闪耀。</small>
+</b>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<h2 class="title">
+未来的十八岁
+</h2>
+
+<p class="desc">
+愿每一个明天，都值得期待
+</p>
+
+<div class="timeline">
+
+<div class="event">
+<div class="dot"></div>
+<h3>去看更大的世界</h3>
+<p>去旅行、去探索，收集属于自己的风景。</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<h3>遇见更多美好</h3>
+<p>遇见有趣的人，也遇见更好的自己。</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<h3>成为闪闪发光的大人</h3>
+<p>不必急着长大，按照自己的节奏慢慢走。</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="final">
+
+<div class="wrap">
+
+<div class="box">
+
+<div>🎂 🎈 ✨</div>
+
+<div class="big">
+18岁生日快乐！
+</div>
+
+<p>
+邹晓昕，愿你往后的每一年，<br>
+都比上一年更加自由、勇敢、快乐。<br>
+愿你永远有期待，也永远有被爱。
+</p>
+
+<a class="btn" href="#letter" onclick="celebrate();return false">
+点击收下祝福 ✉️
+</a>
+
+
+<div id="letter" class="letter">
+
+<h3>To zxx</h3>
+
+<p>
+十八岁生日快乐！
+</p>
+
+<p>
+十八岁是一个很特别的年纪。
+希望从今天开始，
+你可以带着自己的期待，
+慢慢走向更大的世界。
+</p>
+
+<p>
+愿你以后遇到开心的事情就尽情大笑，
+遇到不顺心的时候也不要忘记照顾好自己。
+愿你一直拥有选择自己喜欢生活的勇气，
+也拥有把平凡日子过得闪闪发光的能力。
+</p>
+
+<p>
+希望未来的你，会遇见很多美好的风景、
+真诚的人和值得记住的瞬间。
+也希望多年以后回头看，
+会觉得十八岁的这一年，
+是一个很温柔、很值得纪念的开始。
+</p>
+
+<p>
+新的一岁，愿你平安、快乐、自由，
+愿所有期待都有回应，
+所有努力都有收获。
+</p>
+
+<p>
+生日快乐，十八岁快乐！
+</p>
+
+<p class="signature">
+2027.4<br>
+z
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<footer>
+Made with ✦ for 邹晓昕 · 18th Birthday
+</footer>
+
+
+<script>
+
+function celebrate(){
+
+const letter=document.getElementById("letter");
+
+letter.style.display="block";
+
+setTimeout(()=>{
+letter.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+},100);
+
+for(let i=0;i<70;i++){
+
+const c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDelay=Math.random()*1.2+"s";
+
+c.style.background=[
+"#73aeda",
+"#91b9df",
+"#8ec4e8",
+"#73b8d8",
+"#82a8d1"
+][Math.floor(Math.random()*5)];
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+c.remove();
+},5000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
