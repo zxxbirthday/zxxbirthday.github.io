@@ -53,6 +53,7 @@ section{
   padding:55px 25px;
   border-radius:32px;
   background:#ffffffc4;
+  -webkit-backdrop-filter:blur(15px);
   backdrop-filter:blur(15px);
   box-shadow:0 25px 70px #467da526;
 }
@@ -226,13 +227,6 @@ section{
   animation:open .7s ease;
 }
 
-.letter h3{
-  text-align:center;
-  color:#4f88b1;
-  font-size:25px;
-  margin:0 0 25px;
-}
-
 .letter p{
   line-height:2;
   margin:0 0 15px;
@@ -269,6 +263,8 @@ footer{
   width:9px;
   height:14px;
   z-index:30;
+  pointer-events:none;
+  border-radius:2px;
   animation:fall 3.5s linear forwards;
 }
 
@@ -457,17 +453,15 @@ footer{
 愿你永远有期待，也永远有被爱。
 </p>
 
-<a class="btn" href="#letter" onclick="celebrate();return false">
+<a class="btn" id="wishBtn" href="#letter" onclick="celebrate();return false">
 点击收下祝福 ✉️
 </a>
 
 
 <div id="letter" class="letter">
 
-<h3>To zxx</h3>
-
 <p>
-十八岁生日快乐！
+zxx，见信好！十八岁生日快乐！
 </p>
 
 <p>
@@ -524,15 +518,18 @@ Made with ✦ for 邹晓昕 · 18th Birthday
 function celebrate(){
 
 const letter=document.getElementById("letter");
+const btn=document.getElementById("wishBtn");
 
-letter.style.display="block";
-
-setTimeout(()=>{
-letter.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-},100);
+if(letter.style.display!=="block"){
+  letter.style.display="block";
+  btn.innerText="再放一次礼花 🎉";
+  setTimeout(()=>{
+    letter.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+  },100);
+}
 
 for(let i=0;i<70;i++){
 
